@@ -1,7 +1,7 @@
 ﻿# sf_diploma
 ## Дипломная работа Skillfactory
 Цель дипломной работы - создание шаблона для разворачивания инфраструктуры в Яндекс облаке средствами Terraform, а также приложений на Django и обеспечения логирования и мониторинга.
-Перед началом работы, необходимо склонировать репозиторий на компьютер командой ```git clone https://github.com/Angel04ek-murrmyau/sf_diploma.git```, перейти в этот каталог, и работать в нём.
+Перед началом работы, необходимо склонировать репозиторий на компьютер командой ```git clone https://github.com/post-code-FF/sf_diploma.git```, перейти в этот каталог, и работать в нём.
 
 ## Часть 1. Создание инфраструктуры
 1. Убедитесь, что на компьютере установлены программы Terraform (https://developer.hashicorp.com/terraform/install) и Ansible (https://docs.ansible.com/projects/ansible/latest/installation_guide/installation_distros.html). 
@@ -30,7 +30,7 @@
 ![Окно авторизации](images/auth.png)
 
 ## Часть 2. Организация работы CI/CD.
-1. Для начала необходимо склонировать модифицированные файлы проекта на Django из текущего репозитория в Gitlab репозиторий. Для этого перейдите на https://gitlab.com, клонируйте проект с github (вкладка projects -> new project -> import project -> repository by url -> в поле Git Repository URL вставляйте https://github.com/Angel04ek-murrmyau/sf_diploma), остальные настройки по желанию. Репозиторий уже включает в себя всё необходимое для развертывания CI/CD.
+1. Для начала необходимо склонировать модифицированные файлы проекта на Django из текущего репозитория в Gitlab репозиторий. Для этого перейдите на https://gitlab.com, клонируйте проект с github (вкладка projects -> new project -> import project -> repository by url -> в поле Git Repository URL вставляйте https://github.com/post-code-FF/sf_diploma), остальные настройки по желанию. Репозиторий уже включает в себя всё необходимое для развертывания CI/CD.
   
 2. Все необходимые пакеты уже были установлены в прошлой части с помощью Ansible, поэтому на данном этапе необходимо только зарегистрировать Gitlab runner. Для этого перейдите в новый репозиторий на gitlab.com, (вкладка settings -> CI/CD -> Runners -> Create project runner -> в поле Tags напишите “test”, опционально можно поставить флажок «Run untagged jobs». Gitlab предложит инструкцию по настройке раннера, копируйте команду из шага Step 1 (```gitlab-runner register…```), и выполните её на service машине. Дальее будет предложено выбрать некоторые настройки. Gitlab instance url оставляйте пустым, enter a name for the runner по желанию, executor – обязательно docker, default docker – docker:latest. После чего выполните ```gitlab-runner run```, как указано в шаге 3.
 ![gitlab runner](images/gitlab_runner.png) 
