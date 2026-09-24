@@ -11,3 +11,11 @@
 
 # Динамические файлы
 **/inventory.ini
+.DS_Store
+._*
+*.swp
+*.swo
+__pycache__/
+*.pyc
+*.tfstate
+*.tfstate.*
